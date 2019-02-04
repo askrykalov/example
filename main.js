@@ -1,5 +1,6 @@
 var
-   EXTENSION_ID = 'janknfkldjmmecfllmdccfcdknldkeln';
+   EXTENSION_ID = 'janknfkldjmmecfllmdccfcdknldkeln',
+   tabStream;
 
 chrome.runtime.sendMessage(EXTENSION_ID, {message: 'startRec'}, function (sourceId) {
    var constraints = {
@@ -18,6 +19,7 @@ chrome.runtime.sendMessage(EXTENSION_ID, {message: 'startRec'}, function (source
    };
    navigator.getUserMedia(constraints,
       function (stream) {
+         tabStream = stream;
       },
       function (err) {
       })
