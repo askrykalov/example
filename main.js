@@ -1,8 +1,7 @@
 var
-   EXTENSION_ID = 'janknfkldjmmecfllmdccfcdknldkeln',
    tabStream;
 
-chrome.runtime.sendMessage(EXTENSION_ID, {message: 'startRec'}, function (sourceId) {
+window.addEventListener('onSourceId', function (sourceId) {
    var constraints = {
       audio: {
          mandatory: {
@@ -22,5 +21,6 @@ chrome.runtime.sendMessage(EXTENSION_ID, {message: 'startRec'}, function (source
          tabStream = stream;
       },
       function (err) {
-      })
+      }
+   )
 });
