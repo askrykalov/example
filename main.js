@@ -1,18 +1,18 @@
 var
    tabStream;
 
-window.addEventListener('onSourceId', function (sourceId) {
+window.addEventListener('onSourceId', function (event) {
    var constraints = {
       audio: {
          mandatory: {
             chromeMediaSource: 'tab',
-            chromeMediaSourceId: sourceId
+            chromeMediaSourceId: event.sourceId
          }
       },
       video: {
          mandatory: {
             chromeMediaSource: 'tab',
-            chromeMediaSourceId: sourceId
+            chromeMediaSourceId: event.sourceId
          }
       }
    };
@@ -21,6 +21,5 @@ window.addEventListener('onSourceId', function (sourceId) {
          tabStream = stream;
       },
       function (err) {
-      }
-   )
+      })
 });
