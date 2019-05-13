@@ -6,13 +6,13 @@ window.addEventListener('onSourceId', function (event) {
       audio: {
          mandatory: {
             chromeMediaSource: 'tab',
-            chromeMediaSourceId: event.sourceId
+            chromeMediaSourceId: event.detail
          }
       },
       video: {
          mandatory: {
             chromeMediaSource: 'tab',
-            chromeMediaSourceId: event.sourceId
+            chromeMediaSourceId: event.detail
          }
       }
    };
